@@ -1,6 +1,6 @@
 (async () => {
     const PAUSE_BETWEEN = 3 * 1000;
-    const PAUSE_MINING = 10 * 1000;
+    const PAUSE_MINING = 30 * 60 * 1000;
 
     function clickButton(path) {
         buttonClick = document.querySelector(path);
@@ -17,9 +17,9 @@
         const span = document.querySelector("taco-brigade > div > taco-board > div > div.execute-button.shrink-on-hover2 > span");
         if (span.innerText == "EXECUTE") {
             clickButton(buttonExecute);
+            console.log("Executed");
             await new Promise((res) => setTimeout(res, PAUSE_MINING));
         }
         await new Promise((res) => setTimeout(res, PAUSE_BETWEEN));
     }
-
 })();    
